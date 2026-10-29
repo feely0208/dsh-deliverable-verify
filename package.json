@@ -1,0 +1,68 @@
+{
+  "name": "@deepwhale-cn/dsh-deliverable-verify",
+  "version": "0.1.0",
+  "description": "深鲸交付验收包：按 MANIFEST.json 与 SHA256 校验交付包是否完整、是否被改动",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "plugin",
+    "skill",
+    "deliverable",
+    "verify",
+    "sha256",
+    "验收",
+    "交付包"
+  ],
+  "files": [
+    "lib",
+    "bin",
+    "skill",
+    "cordis.patch.yml",
+    "tests/fixtures",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "dsh-deliverable-verify": "./bin/cli.mjs"
+  },
+  "engines": {
+    "dsh": ">=0.1.0-rc.6 <0.3.0",
+    "node": ">=18"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ],
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "dependencies": {
+    "@deepwhale-cn/dsh-guard-core": "^0.10.1"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-skill": "*"
+  },
+  "author": "温州深鲸智能科技有限公司 <contact@deepwhale.org.cn>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feely0208/dsh-deliverable-verify.git"
+  },
+  "homepage": "https://www.deepwhale.org.cn/skills.html",
+  "bugs": {
+    "url": "https://github.com/feely0208/dsh-deliverable-verify/issues"
+  }
+}

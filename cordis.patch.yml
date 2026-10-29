@@ -1,0 +1,4 @@
+# @deepwhale-cn/dsh-deliverable-verify 的组合层
+- insert:
+    - id: deliverable-verify
+      name: '@deepwhale-cn/dsh-deliverable-verify'
